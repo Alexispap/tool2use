@@ -12,21 +12,31 @@ import {
   IonToolbar,
 } from '@ionic/react';
 import { useEffect, useState } from 'react';
-import { cog, flash, list } from 'ionicons/icons';
+import { cog, flash, list, search, heart, bulb, chat } from 'ionicons/icons';
 
 const pages = [
   {
-    title: 'Feed',
-    icon: flash,
+    title: 'Stöbern',
+    icon: search,
     url: '/tabs/feed',
   },
   {
-    title: 'Lists',
-    icon: list,
+    title: 'Wunschlisten',
+    icon: heart,
     url: '/tabs/lists',
   },
   {
-    title: 'Settings',
+    title: 'Community',
+    icon: cog,
+    url: '/tabs/settings',
+  },
+  {
+    title: 'Posteingang',
+    icon: cog,
+    url: '/tabs/settings',
+  },
+  {
+    title: 'Profil',
     icon: cog,
     url: '/tabs/settings',
   },

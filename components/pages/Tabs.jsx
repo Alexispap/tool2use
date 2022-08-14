@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonRouterOutlet, IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { cog, flash, list } from 'ionicons/icons';
+import { search, heart, bulb, mail, person } from 'ionicons/icons';
 
 import Home from './Feed';
 import Lists from './Lists';
@@ -20,16 +20,24 @@ const Tabs = () => {
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
         <IonTabButton tab="tab1" href="/tabs/feed">
-          <IonIcon icon={flash} />
-          <IonLabel>Feed</IonLabel>
+          <IonIcon icon={search} />
+          <IonLabel>Stöbern</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab2" href="/tabs/lists">
-          <IonIcon icon={list} />
-          <IonLabel>Lists</IonLabel>
+          <IonIcon icon={heart} />
+          <IonLabel>Wunschlisten</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab3" href="/tabs/settings">
-          <IonIcon icon={cog} />
-          <IonLabel>Settings</IonLabel>
+          <IonIcon icon={bulb} />
+          <IonLabel>Community</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="tab3" href="/tabs/settings">
+          <IonIcon icon={mail} />
+          <IonLabel>Posteingang</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="tab3" href="/tabs/settings">
+          <IonIcon icon={person} />
+          <IonLabel>Profil</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
