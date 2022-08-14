@@ -1,5 +1,5 @@
 export const images = [
-  'https://images.unsplash.com/photo-1610235554447-41505d7962f8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=882&q=80',
+  '/../public/img/schlagbohrer.jpg',
   'https://images.unsplash.com/photo-1610212594948-370947a3ba0b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
   'https://images.unsplash.com/photo-1610155180433-9994da6a323b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
 ];
@@ -9,8 +9,10 @@ export const homeItems = [
     title: 'Exploring Maui',
     type: 'Blog',
     text: 'We just got back from a trip to Maui, and we had a great time...',
-    author: 'Max Lynch',
+    tool: 'Schlagbohrer',
+    author: 'Privat:er Vermieter:in',
     authorAvatar: '/img/max.jpg',
+    price: '9 €',
     image: images[0],
   },
   {
@@ -18,8 +20,10 @@ export const homeItems = [
     type: 'Blog',
     text:
       'Last month we took a trek to the Arctic Circle. The isolation was just what we needed after...',
-    author: 'Max Lynch',
+    tool: 'Schlagbohrer',
+    author: 'Privat:er Vermieter:in',
     authorAvatar: '/img/max.jpg',
+    price: '9 €',
     image: images[1],
   },
   {
@@ -27,8 +31,10 @@ export const homeItems = [
     type: 'Blog',
     text:
       'The Faroe Islands are a North Atlantic archipelago located 320 kilometres (200 mi) north-northwest of Scotland...',
-    author: 'Max Lynch',
+    tool: 'Schlagbohrer',
+    author: 'Privat:er Vermieter:in',
     authorAvatar: '/img/max.jpg',
+    price: '9 €',
     image: images[2],
   },
 ];
