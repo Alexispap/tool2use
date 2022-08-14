@@ -20,7 +20,7 @@ import Store from '../../store';
 
 const FeedCard = ({ title, type, text,tool, author, price, authorAvatar, image }) => (
   <Card className="my-4 mx-auto">
-    <div className="h-32 w-full relative">
+    <div className="h-80 w-full relative">
       <Image className="rounded-t-xl" objectFit="cover" src={image} alt="" layout='fill' />
     </div>
     <div className="px-4 py-4 bg-white rounded-b-xl dark:bg-gray-900">
