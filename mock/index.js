@@ -6,35 +6,27 @@ export const images = [
 
 export const homeItems = [
   {
-    title: 'Exploring Maui',
-    type: 'Blog',
-    text: 'We just got back from a trip to Maui, and we had a great time...',
     tool: 'Schlagbohrer',
     author: 'Privat:er Vermieter:in',
     authorAvatar: '/img/roman.jpg',
-    price: '9 €',
+    price: '9',
+    date: '2022-09-20',
     image: images[0],
   },
   {
-    title: 'Arctic Adventures',
-    type: 'Blog',
-    text:
-      'Last month we took a trek to the Arctic Circle. The isolation was just what we needed after...',
-    tool: 'Schlagbohrer',
+    tool: 'Abisolierzange',
     author: 'Privat:er Vermieter:in',
     authorAvatar: '/img/roman.jpg',
-    price: '9 €',
+    price: '11',
+    date: '2022-09-28',
     image: images[1],
   },
   {
-    title: 'Frolicking in the Faroe Islands',
-    type: 'Blog',
-    text:
-      'The Faroe Islands are a North Atlantic archipelago located 320 kilometres (200 mi) north-northwest of Scotland...',
     tool: 'Schlagbohrer',
     author: 'Privat:er Vermieter:in',
     authorAvatar: '/img/roman.jpg',
-    price: '9 €',
+    price: '29',
+    date: '2022-10-10',
     image: images[2],
   },
 ];

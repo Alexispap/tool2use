@@ -8,6 +8,7 @@ import {
   IonList,
   IonMenu,
   IonMenuToggle,
+  IonSearchbar,
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
@@ -68,7 +69,7 @@ const Menu = () => {
     <IonMenu side="start" contentId="main" onIonDidOpen={handleOpen} onIonDidClose={handleClose}>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Menu</IonTitle>
+          <IonTitle>Tool2Use</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

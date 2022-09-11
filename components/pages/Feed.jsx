@@ -11,43 +11,78 @@ import {
   IonIcon,
   IonContent,
   IonMenuButton,
+  IonSearchbar
 } from '@ionic/react';
+
 import Notifications from './Notifications';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { notificationsOutline } from 'ionicons/icons';
 import { getHomeItems } from '../../store/selectors';
 import Store from '../../store';
+import moment from 'moment';
 
-const FeedCard = ({ title, type, text,tool, author, price, authorAvatar, image }) => (
-  <Card className="my-4 mx-auto">
-    <div className="h-80 w-full relative">
-      <Image className="rounded-t-xl" objectFit="cover" src={image} alt="" layout='fill' />
-    </div>
-    <div className="px-4 py-4 bg-white rounded-b-xl dark:bg-gray-900">
-      <h4 className="font-bold py-0 text-s text-gray-400 dark:text-gray-500 uppercase">{type}</h4>
-      <h2 className="font-bold text-2xl text-gray-800 dark:text-gray-100">{title}</h2>
-      <p className="sm:text-sm text-s text-gray-500 mr-1 my-3 dark:text-gray-400">{text}</p>
-      <div className="flex items-center space-x-4"> 
-       <h2 className="font-bold text-2xl text-gray-800 dark:text-gray-100">{tool}</h2>
-        <div className="w-10 h-10 relative">
-          <Image layout='fill' src={authorAvatar} className="rounded-full" alt="" />
-        </div>
-        <h3 className="text-gray-500 dark:text-gray-200 m-l-8 text-sm font-medium">{author}</h3>
+moment.locale('de');
+
+
+const FeedCard = ({ tool, author, date, price, authorAvatar, image }) => (
+    <Card className="my-4 mx-auto">
+      <div className="h-80 w-full relative">
+        <Image className="rounded-t-xl" objectFit="cover" src={image} alt="" layout='fill' />
       </div>
-      <h2 className="text-gray-500 dark:text-gray-200 text-sm font-medium">{price}</h2>
-    </div>
-  </Card>
+      <div className="px-6 py-6 bg-green-100 rounded-b-xl dark:bg-gray-900">
+        <h2 className="font-bold text-2xl text-green-900 dark:text-gray-100 mb-4">
+          {tool}
+        </h2>
+        <div className="flex items-center space-x-4 mb-4">
+          <div className="w-10 h-10 relative">
+            <Image layout='fill' src={authorAvatar} className="rounded-full" alt="" />
+          </div>
+          <h3 className="text-green-900 dark:text-gray-200 m-l-8 text-lg font-medium">
+            {author}
+          </h3>
+        </div>
+        <div className='flex flex-row justify-between'>
+          <div className="text-green-900 dark:text-gray-200 text-lg font-bold">
+            {moment(date).fromNow()}
+          </div>
+          <h2 className="text-green-900 dark:text-white text-lg font-bold">
+            ab {price} € / Tag
+          </h2>
+        </div>
+      </div>
+    </Card>
 );
 
 const Feed = () => {
   const homeItems = Store.useState(getHomeItems);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [searchText, setSearchText] = useState('');
+
+  homeItems.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  let filteredItems = homeItems.filter((item) => {
+    if (searchText == '') {
+      return item;
+    } else if (item.tool.toLowerCase().includes(searchText.toLowerCase())) {
+      return item;
+    }
+  });
+
+
+
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-      {/*     <IonTitle>Feed</IonTitle> */}
+          <IonSearchbar
+            placeholder="Werkzeug oder Bastelprojekt finden?"
+            class='border-10 border-green-100'
+            onIonChange={e => setSearchText(e.detail.value)}
+          />
+          {/*     <IonTitle>Feed</IonTitle> */}
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
@@ -60,12 +95,13 @@ const Feed = () => {
       </IonHeader>
       <IonContent className="ion-padding" fullscreen>
         <IonHeader collapse="condense">
+
           <IonToolbar>
             <IonTitle size="large">Feed</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Notifications open={showNotifications} onDidDismiss={() => setShowNotifications(false)} />
-        {homeItems.map((i, index) => (
+        {filteredItems.map((i, index) => (
           <FeedCard {...i} key={index} />
         ))}
       </IonContent>
