@@ -29,7 +29,7 @@ const FeedCard = ({ tool, author, date, price, authorAvatar, image }) => (
       <div className="h-80 w-full relative">
         <Image className="rounded-t-xl" objectFit="cover" src={image} alt="" layout='fill' />
       </div>
-      <div className="px-6 py-6 bg-green-100 rounded-b-xl dark:bg-gray-900">
+      <div className="px-6 py-6 bg-white-100 rounded-b-xl dark:bg-gray-900">
         <h2 className="font-bold text-2xl text-green-900 dark:text-gray-100 mb-4">
           {tool}
         </h2>
@@ -97,7 +97,18 @@ const Feed = () => {
         <IonHeader collapse="condense">
 
           <IonToolbar>
-            <IonTitle size="large">Feed</IonTitle>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          <IonIcon name="hammer-outline" size="large" ></IonIcon>
+          
+           {/*  <IonTitle size="large">Feed</IonTitle> */}
           </IonToolbar>
         </IonHeader>
         <Notifications open={showNotifications} onDidDismiss={() => setShowNotifications(false)} />
