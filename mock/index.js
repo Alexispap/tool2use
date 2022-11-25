@@ -4,6 +4,7 @@ export const images = [
   '/../public/img/schlagbohrer.jpg',
 ];
 
+
 export const homeItems = [
   {
     tool: 'Schlagbohrer',
@@ -12,6 +13,8 @@ export const homeItems = [
     price: '9',
     date: '2022-09-20',
     image: images[0],
+    lat: 47.991,
+    lng: 7.85
   },
   {
     tool: 'Abisolierzange',
@@ -20,6 +23,8 @@ export const homeItems = [
     price: '11',
     date: '2022-09-28',
     image: images[1],
+    lat: 47.98,
+    lng: 7.84
   },
   {
     tool: 'Schlagbohrer',
@@ -28,6 +33,8 @@ export const homeItems = [
     price: '29',
     date: '2022-10-10',
     image: images[2],
+    lat: 47.994,
+    lng: 7.82
   },
 ];
 

@@ -7,6 +7,7 @@ import Home from './Feed';
 import Lists from './Lists';
 import ListDetail from './ListDetail';
 import Settings from './Settings';
+import ToolMap from './ToolMap';
 
 const Tabs = () => {
   return (
@@ -16,6 +17,7 @@ const Tabs = () => {
         <Route path="/tabs/lists" component={Lists} exact={true} />
         <Route path="/tabs/lists/:listId" component={ListDetail} exact={true} />
         <Route path="/tabs/settings" component={Settings} exact={true} />
+        <Route path="/tabs/map" component={ToolMap} exact={true} />
         <Route path="/tabs" render={() => <Redirect to="/tabs/feed" />} exact={true} />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
@@ -27,15 +29,15 @@ const Tabs = () => {
           <IonIcon icon={heart} />
           <IonLabel>Wunschlisten</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/settings">
+        <IonTabButton tab="tab3" href="/tabs/map">
           <IonIcon icon={bulb} />
-          <IonLabel>Community</IonLabel>
+          <IonLabel>Karte</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/settings">
+        <IonTabButton tab="tab4" href="/tabs/settings">
           <IonIcon icon={mail} />
           <IonLabel>Posteingang</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/settings">
+        <IonTabButton tab="tab5" href="/tabs/settings">
           <IonIcon icon={person} />
           <IonLabel>Profil</IonLabel>
         </IonTabButton>
